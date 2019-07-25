@@ -1,5 +1,5 @@
 <!-- breadcrumb area start -->
-<section class="breadcrumb-area">
+<!-- <section class="breadcrumb-area">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -9,24 +9,38 @@
             </div>
         </div>
     </div>
+</section> -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row mx-100">
+            <div class="col-sm-4">
+                <div class="breadcrumb-area-img">
+                    <img [src]="film.HinhAnh" alt="">
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="breadcrumb-area-text">
+                    <p>{{film.NgayKhoiChieu | date:"yyyy-mm-dd" }}</p>
+                    <h3>{{film.TenPhim}}</h3>
+                    <p>119 phút - {{film.DanhGia}} IMDb - 2D/Digital/3D/IMAX/4DX</p>
+                    <a href="#buy-ticket" class="theme-btn mt-2"><i class="icofont icofont-ticket"></i> BUY TICKET</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- breadcrumb area end -->
 
 
 <!-- transformers area start -->
-
-
-
-
-<!-- transformers area end -->
-<section class="transformers-area">
+<section class="transformers-area mb-3" id="buy-ticket">
     <div class="container">
-        <mat-tab-group mat-align-tabs="center">
+        <mat-tab-group mat-align-tabs="center" class="mb-3">
             <mat-tab>
-                <ng-template mat-tab-label>
+                <ng-template mat-tab-label >
                     <p class="title-tab">Lịch Chiếu</p>
                 </ng-template>
-                <div class="transformers-box">
+                <!-- <div class="transformers-box">
                     <div class="row flexbox-center">
                         <div class="col-lg-5 text-lg-left text-center">
                             <div class="transformers-content">
@@ -118,7 +132,287 @@
                         </div>
                     </div>
                     <a href="#" class="theme-btn"><i class="icofont icofont-ticket"></i> BUY TICKET</a>
-                </div>
+                </div> -->
+                <mat-tab-group>
+                    <div class="container">
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <div>
+                                    <img src="../../../assets/img/cinema/bhd.png" style="width: 50px; height: 50px" alt="">
+                                    <p class="text-white">BHD Star Cineplex</p>
+                                </div>
+                            </ng-template>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/bhd-star-vincom-3-2-15379527367766.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">BHD Star Cineplex <span>- 3/2</span></p>
+                                        <span style="font-size: 12px">L5-Vincom 3/2, 3C Đường 3/2, Q.10</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/bhd-star-bitexco-15379552241200.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">BHD Star Cineplex <span>- Bitexco</span></p>
+                                        <span style="font-size: 12px">L3-Bitexco Icon 68, 2 Hải Triều, Q.1</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/bhd-star-pham-hung-15379533093101.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">BHD Star Cineplex <span>- Phạm Hùng</span></p>
+                                        <span style="font-size: 12px">L4-Satra Phạm Hùng, C6/27 Phạm Hùng, Bình Chánh</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/bhd-star-vincom-quang-trung-15379536724871.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">BHD Star Cineplex <span>- Vincom Quang Trung</span></p>
+                                        <span style="font-size: 12px">B1-Vincom QT, 190 Quang Trung, Gò Vấp</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <div>
+                                    <img src="../../../assets/img/cinema/cinestar.png" style="width: 50px; height: 50px" alt="">
+                                    <p class="text-white">Cinestar</p>
+                                </div>
+                            </ng-template>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/cinestar-quoc-thanh-15379636956745.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px;color: #eb315a">CNS <span>- Quốc Thanh</span></p>
+                                        <span style="font-size: 12px">271 Nguyễn Trãi, Q.1</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/cinestar-hai-ba-trung-15383833704033.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px;color: #eb315a">CNS <span>- Hai Bà Trưng</span></p>
+                                        <span style="font-size: 12px">135 Hai Bà Trưng, Bến Nghé, Q.1</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <div>
+                                    <img src="../../../assets/img/cinema/dongdacinema.png" style="width: 50px; height: 50px" alt="">
+                                    <p class="text-white">DDC - Đống Đa</p>
+                                </div>
+                            </ng-template>
+                            <div class="text-center my-4">
+                                Không có suất chiếu nào
+                            </div>
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <div>
+                                    <img src="../../../assets/img/cinema/galaxycine.png" style="width: 50px; height: 50px" alt="">
+                                    <p class="text-white">Galaxy Cinema</p>
+                                </div>
+                            </ng-template>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/galaxy-nguyen-du-15379626329832.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">GLX <span>- Nguyễn Du</span></p>
+                                        <span style="font-size: 12px">116 Nguyễn Du, Q.1</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/galaxy-tan-binh-15381063333729.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">GLX <span>- Tân Bình</span></p>
+                                        <span style="font-size: 12px">246 Nguyễn Hồng Đào, Tân Bình</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/galaxy-kinh-duong-vuong-15381065563489.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">GLX <span>- Kinh Dương Vương</span></p>
+                                        <span style="font-size: 12px">718bis Kinh Dương Vương, Q.6</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/galaxy-quang-trung-15381040745219.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">GLX <span>- Quang Trung</span></p>
+                                        <span style="font-size: 12px">L3-Co.opmart Foodcosa, 304A Quang Trung, Gò Vấp</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/galaxy-trung-chanh-15381048160387.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">GLX <span>- Trung Chánh</span></p>
+                                        <span style="font-size: 12px">TTVH Q12 - 09, Q L 22, Trung Mỹ Tây, Q.12</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/galaxy-pham-van-chi-15381059548289.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">GLX <span>- Phạm Văn Chí</span></p>
+                                        <span style="font-size: 12px">Lầu 5, TTTM Platinum Plaza, 634 Phạm Văn Chí, Q.6</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <div>
+                                    <img src="../../../assets/img/cinema/lotte.png" style="width: 50px; height: 50px" alt="">
+                                    <p class="text-white">Lotte Cinema</p>
+                                </div>
+                            </ng-template>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/lotte-cinema-nam-sai-gon-15383867312967.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">Lotte <span>- Nam Sài Gòn</span></p>
+                                        <span style="font-size: 12px">L3-Lotte Mart NSG, 469 Nguyễn Hữu Thọ, Q.7</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/lotte-cinema-cong-hoa-15383860949090.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">Lotte <span>- Cộng Hòa</span></p>
+                                        <span style="font-size: 12px">L4-Pico Plaza, 20 Cộng Hòa, Tân Bình</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/lotte-cinema-nowzone-15383875427169.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px">GLX <span>- Nowzone</span></p>
+                                        <span style="font-size: 12px">L5-Nowzone, 235 Nguyễn Văn Cừ, Q.1</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <div>
+                                    <img src="../../../assets/img/cinema/megags.png" style="width: 50px; height: 50px" alt="">
+                                    <p class="text-white">Mega GS</p>
+                                </div>
+                            </ng-template>
+                            <div class="movie my-4">
+                                <div class="movie-info d-flex mb-4">
+                                    <img src="../../../assets/img/cinema/mega-gs-cao-thang-15380164745357.jpg" style="width: 50px; height: 50px" alt="">
+                                    <div class="movie-address ml-3 mr-50">
+                                        <p class="text-bold" style="font-size: 18px; color: #e5a813">MegaMS <span>- Cao Thắng</span></p>
+                                        <span style="font-size: 12px">19 Cao Thắng, Q.3</span>
+                                    </div>  
+                                    <div class="mr-4" *ngFor="let item of film.LichChieu">
+                                        <p>{{item.NgayChieuGioChieu | date:"dd-mm-yyyy"}}</p>
+                                        <a style="color: #eb315a; font-size: 24px" [routerLink]="['/ticket-room', item.MaLichChieu]">{{item.NgayChieuGioChieu | date:"hh-mm"}}</a>
+                                    </div> 
+                                </div>
+                                <hr>
+                            </div>
+                        </mat-tab>
+                    </div>
+                </mat-tab-group>
+
 
             </mat-tab>
 
@@ -126,17 +420,10 @@
                 <ng-template mat-tab-label>
                     <p class="title-tab">Chi Tiết</p>
                 </ng-template>
-                <div class="transformers-box">
+                <div class="transformers-box mb-3">
                     <div class="row flexbox-center">
                         <div class="col-lg-5 text-lg-left text-center">
                             <div class="transformers-content">
-                                <img src="assets/img/slide2.png" alt="about" />
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="transformers-content">
-                                <h2>The Transformers</h2>
-                                <p>3D | Animation | Action | Sci-Fi</p>
                                 <ul>
                                     <li>
                                         <div class="transformers-left">
@@ -175,7 +462,7 @@
                                             Release:
                                         </div>
                                         <div class="transformers-right">
-                                            2018-07-22
+                                            {{film.NgayKhoiChieu | date:"yyyy-mm-dd" }}
                                         </div>
                                     </li>
                                     <li>
@@ -188,18 +475,10 @@
                                     </li>
                                     <li>
                                         <div class="transformers-left">
-                                            Cinema:
+                                            Format:
                                         </div>
                                         <div class="transformers-right">
-                                            HB Movies | HW Town <a href="#" class="theme-btn">Movies House</a>Grand
-                                            Seats | HB
-                                            Max
-                                            <div class="transformers-bottom">
-                                                <p>May 19, 2018 <span>15h47</span></p>
-                                                <p>May 19, 2018 <span>15h47</span></p>
-                                                <p>May 19, 2018 <span>15h47</span></p>
-                                            </div>
-
+                                            2D/Digital/3D/IMAX/4DX
                                         </div>
                                     </li>
                                     <li>
@@ -216,8 +495,23 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="col-lg-7">
+                            <div class="transformers-content text-top">
+                                <ul>
+                                    <li>
+                                        <div class="transformers-left">
+                                            Description: 
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="transformers-right">
+                                            {{film.MoTa}}
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <a href="#" class="theme-btn"><i class="icofont icofont-ticket"></i> BUY TICKET</a>
                 </div>
 
             </mat-tab>
@@ -317,3 +611,4 @@
         </mat-tab-group>
     </div>
 </section>
+<!-- transformers area end -->

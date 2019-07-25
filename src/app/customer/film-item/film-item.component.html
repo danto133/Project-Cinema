@@ -1,18 +1,17 @@
 <div>
     <div class="box-img">
-        <div class="over-flow" [routerLink]="[ '/detail', 1 ]"></div>
-        <img [src]="'https://netphim.tv/image_static/5360/6162/53606162646560/poster.medium-49.jpg'" alt="">
+        <div class="over-flow" [routerLink]="[ '/detail', Film.MaPhim]" [queryParams]="{tenPhim: Film.TenPhim}"></div>
+        <img [src]="Film.HinhAnh" alt="">
         <app-icon-play></app-icon-play>
     </div>
     <div class="box-select">
         <div class="content">
-            <p>HIHI Tôi là tên của bộ phim nề</p>
+            <p>{{ Film.TenPhim }}</p>
         </div>
         <div class="button">
-            <button mat-raised-button class="btn-select buy">Mua Vé</button>
+            <button mat-raised-button class="btn-select buy" (click)="goToDetail()">Mua Vé</button>
         </div>
     </div>
 
-    
 
 </div>

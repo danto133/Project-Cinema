@@ -9,6 +9,7 @@ import { FooterModule } from './footer/footer.module';
 import { MaterialModule } from '../_Core/Modules/material/material.module';
 import { ComponentModule } from '../_Core/Modules/component/component.module';
 import { FilmDetailModule } from './film-detail/film-detail.module';
+import { TicketRoomModule } from './ticket-room/ticket-room.module';
 
 @NgModule({
   declarations: [CustomerComponent],
@@ -20,7 +21,8 @@ import { FilmDetailModule } from './film-detail/film-detail.module';
     IndexModule,
     MaterialModule,
     ComponentModule,
-    FilmDetailModule
+    FilmDetailModule,
+    TicketRoomModule
   ]
 })
 export class CustomerModule { }

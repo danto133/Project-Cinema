@@ -4,7 +4,7 @@ import { ListFilmsComponent } from './list-films.component';
 import { MaterialModule } from 'src/app/_Core/Modules/material/material.module';
 import { FilmItemModule } from '../../film-item/film-item.module';
 import { RouterModule } from '@angular/router';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [ListFilmsComponent],
@@ -12,7 +12,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     MaterialModule,
     FilmItemModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ],
   exports: [
     ListFilmsComponent,

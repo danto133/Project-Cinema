@@ -150,6 +150,12 @@ textarea:focus {
 	font-size: 40px;
 	margin-right: 5px;
 }
+.mr-50 {
+    margin-right: 50px;
+}
+.mx-100 {
+    margin: 0 100px;
+}
 .mt-100 {
     margin-top: 100px;
 }
@@ -783,11 +789,26 @@ hr {
     background-size: cover;
 	padding: 280px 0 200px;
 }
-.breadcrumb-area-content {
+/* .breadcrumb-area-content {
 	text-align: center;
 }
 .breadcrumb-area-content h1 {
 	font-size: 60px;
+} */
+.breadcrumb-area-img {
+    margin-left: 50px;
+}
+.breadcrumb-area-img img{
+    border-radius: 4px;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+}
+.breadcrumb-area-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+}
+.breadcrumb-area-text p {
+    color: white;
 }
 .transformers-box {
     padding: 35px;
@@ -798,6 +819,7 @@ hr {
 .transformers-box .transformers-content img {
     display: block;
     position: relative;
+    /* width: 100%; */
 }
 
 .transformers-content > p {
@@ -832,6 +854,11 @@ hr {
     font-weight: 300;
 }
 
+.transformers-right a i {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
 .transformers-right .theme-btn {
     margin: 0 8px;
 	padding: 2px 15px;
@@ -856,6 +883,9 @@ hr {
     right: 0;
     bottom: 0;
     border-radius: 5px 0 0;
+}
+.movie-address {
+    width: 250px;
 }
 
 .details-content >div {
@@ -1295,3 +1325,17 @@ hr {
 /*--------------------------------------
 --------- Pre Loader Style END ---------
 ---------------------------------------*/
+
+/* ------------ Mattab -------------- */
+/* .mat-tab-list {
+    padding: 40px 0;
+} */
+.mat-tab-labels > .mat-tab-label {
+    height: 100px;
+}
+
+/*----------- movie ----------------- */
+
+.movie-info {
+    justify-content: center;
+}

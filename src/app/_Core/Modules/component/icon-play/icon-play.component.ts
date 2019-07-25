@@ -11,5 +11,5 @@ export class IconPlayComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  
 }
