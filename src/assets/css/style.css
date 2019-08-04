@@ -130,7 +130,7 @@ input[type="search"],
 input[type="password"],
 input[type="number"],
 textarea {
-    background: #24262d;
+    /* background: #24262d; */
     width: 100%;
     padding: 8px 15px;
     border: none;
@@ -783,11 +783,14 @@ hr {
 ------------------------------------*/
 .breadcrumb-area {
     position: relative;
-    background-image: url('../img/breadcrumb.png');
+    background-image: url('../img/backgroundFilmDetail.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-	padding: 280px 0 200px;
+    padding: 280px 0 200px;
+    background-color: #000000b6;
+    background-blend-mode: darken;
+    
 }
 /* .breadcrumb-area-content {
 	text-align: center;
@@ -1339,3 +1342,16 @@ hr {
 .movie-info {
     justify-content: center;
 }
+
+/* Login */
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+  

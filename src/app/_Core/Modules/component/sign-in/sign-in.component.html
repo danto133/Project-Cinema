@@ -1,0 +1,60 @@
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- Modal header -->
+        <div class="modal-header" style="border-bottom: none">
+            <h3 class="p-3 justify-center" style="color: #ff4081">ACCOUNT LOGIN</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- end Modal header -->
+        <!-- modal body -->
+        <div class="modal-body">
+            <form class="example-form" #LoginForm='ngForm'  (ngSubmit)="logIn(LoginForm.value)">
+                <!-- Username -->
+                <mat-form-field class="example-full-width mb-3">
+                    <input matInput type="text" name="TaiKhoan" #username placeholder="Username" [formControl]="usernameFormControl"
+                            [errorStateMatcher]="matcher">
+                    <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                    <mat-error *ngIf="usernameFormControl.hasError('username') && !usernameFormControl.hasError('required')">
+                        (*) Please enter a valid username
+                    </mat-error>
+                    <mat-error *ngIf="usernameFormControl.hasError('required')">
+                        (*) Username is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <!-- Password -->
+                <mat-form-field class="example-full-width mb-3">
+                    <input matInput type="password" name="MatKhau" #password placeholder="Password" [formControl]="passwordFormControl"
+                            [errorStateMatcher]="matcher">
+                    <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                    <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+                        (*) Please enter a valid password
+                    </mat-error>
+                    <mat-error *ngIf="passwordFormControl.hasError('required')">
+                        (*) Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <!--  -->
+                <div class="d-flex justify-content-between">
+                    <mat-checkbox class="m-0">Remenber Me</mat-checkbox>
+                    <span><a href="" style="color: #ff4081">Forgot Password?</a></span>
+                </div>
+
+                <div class="d-flex justify-content-center mt-3">
+                    <button mat-raised-button type="submit" class="btnLogin" style="color: white; background: #ff4081; font-size: 18px; width: 100%;padding: 5px">LOGIN</button>
+                </div>
+            </form>
+        </div>
+        <!-- end modal body -->
+        <div class="modal-footer" style="border-top: none">
+            <a style="color: #ff4081" data-dismiss="modal" aria-label="Close" href="#" data-toggle="modal" data-target="#modelId2">Create an account</a>
+        </div>
+    </div>
+  </div>
+</div>
+  
+  
