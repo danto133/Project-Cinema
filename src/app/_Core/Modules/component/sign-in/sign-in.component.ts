@@ -32,8 +32,8 @@ export class SignInComponent implements OnInit {
     }
     
     logIn(LoginForm) {
-        
-        const uri = `QuanLyNguoiDung/DangNhap?TaiKhoan=${LoginForm.TaiKhoan}&MatKhau=${LoginForm.MatKhau}`
+        console.log(LoginForm);
+        const uri = `QuanLyNguoiDung/DangNhap?TaiKhoan=${LoginForm.Username}&MatKhau=${LoginForm.Password}`
         this.dataService.post(uri).subscribe((data: any) => {
             if (data === 'Tài khoản hoặc mật khẩu không đúng !') {
                 alert(data);

@@ -14,8 +14,11 @@
             <form class="example-form" #LoginForm='ngForm'  (ngSubmit)="logIn(LoginForm.value)">
                 <!-- Username -->
                 <mat-form-field class="example-full-width mb-3">
-                    <input matInput type="text" name="TaiKhoan" #username placeholder="Username" [formControl]="usernameFormControl"
-                            [errorStateMatcher]="matcher">
+                    <input matInput type="text" 
+                        [(ngModel)]="Username"
+                        name="Username"
+                        placeholder="Username" 
+                        [errorStateMatcher]="matcher" />
                     <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
                     <mat-error *ngIf="usernameFormControl.hasError('username') && !usernameFormControl.hasError('required')">
                         (*) Please enter a valid username
@@ -27,7 +30,10 @@
 
                 <!-- Password -->
                 <mat-form-field class="example-full-width mb-3">
-                    <input matInput type="password" name="MatKhau" #password placeholder="Password" [formControl]="passwordFormControl"
+                    <input matInput type="password" 
+                            [(ngModel)]="Password"
+                            name="Password"
+                            placeholder="Password" 
                             [errorStateMatcher]="matcher">
                     <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
                     <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">

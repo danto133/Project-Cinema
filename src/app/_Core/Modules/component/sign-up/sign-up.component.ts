@@ -41,14 +41,13 @@ export class SignUpComponent implements OnInit {
     }
     register(registerForm) {
         const objUser = {
-            TaiKhoan: registerForm.TaiKhoan,
-            MatKhau: registerForm.MatKhau,
+            TaiKhoan: registerForm.Username,
+            MatKhau: registerForm.Password,
             Email: registerForm.Email,
-            SoDT: registerForm.SoDT,
+            SoDT: registerForm.PhoneNumber,
             MaNhom: 'GP10',
             MaLoaiNguoiDung: 'KhachHang'
           };
-
         const uri = `QuanLyNguoiDung/ThemNguoiDung`;
         this.dataService.post(uri, objUser).subscribe((data: any) => {
         if (data === 'Tài khoản đã tồn tại') {
