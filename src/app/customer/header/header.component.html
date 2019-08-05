@@ -15,8 +15,8 @@
                     <button><i class="icofont icofont-search"></i></button>
                 </form>
                 <ul> 
-                    <li><a href="#">Welcome Guest!</a></li>
-                    <li><a class="login-popup" href="#" data-toggle="modal" data-target="#modelId">Login</a></li>
+                    <li><a href="#">{{ isLogin ? "Hi " + userLogin.TaiKhoan : "Welcome Guest!"}}</a></li>
+                    <li><a *ngIf="!isLogin" class="login-popup" href="#" data-toggle="modal" data-target="#modelId">Login</a></li>
                 </ul>
             </div>
             <div class="menu-area">

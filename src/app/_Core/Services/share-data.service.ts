@@ -16,6 +16,14 @@ export class ShareDataService {
     this.isLogin.next(data);
   }
 
-  
+  private userCurrent = new BehaviorSubject({} as any);
+
+  shareUserCurrent = this.userCurrent.asObservable();
+
+  sharingUserCurrent(data: any){
+    this.userCurrent.next(data);
+  }
+
+
 
 }
