@@ -5,6 +5,7 @@ import { HeaderRoutingModule } from './header-routing.module';
 import { HeaderComponent } from './header.component';
 import { RouterModule } from '@angular/router';
 import { ComponentModule } from 'src/app/_Core/Modules/component/component.module';
+import { MaterialModule } from 'src/app/_Core/Modules/material/material.module';
 
 @NgModule({
   declarations: [HeaderComponent],
@@ -12,7 +13,8 @@ import { ComponentModule } from 'src/app/_Core/Modules/component/component.modul
     CommonModule,
     HeaderRoutingModule,
     RouterModule,
-    ComponentModule
+    ComponentModule,
+    MaterialModule
   ],
   exports: [
     HeaderComponent

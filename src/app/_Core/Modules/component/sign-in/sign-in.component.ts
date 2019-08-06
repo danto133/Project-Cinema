@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { DataService } from "../../../Services/data.service";
@@ -18,6 +18,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
+
+    @ViewChild("closeLogin", {static: false} ) closeLogin: ElementRef;
+
     usernameFormControl = new FormControl('', [
         Validators.required,
     ]);
@@ -32,13 +35,15 @@ export class SignInComponent implements OnInit {
 
     ngOnInit() {
     }
-    
+
     logIn(LoginForm) {
         const uri = `QuanLyNguoiDung/DangNhap?TaiKhoan=${LoginForm.Username}&MatKhau=${LoginForm.Password}`
         this.dataService.post(uri).subscribe((data: any) => {
+            console.log(data);
             if (data === 'Tài khoản hoặc mật khẩu không đúng !') {
                 alert(data);
             } else {
+                this.closeLogin.nativeElement.click();
                 this.shareData.sharingIsLongin(true);
                 this.shareData.sharingUserCurrent(data);
                 localStorage.setItem("userLogin",JSON.stringify(data));
