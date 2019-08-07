@@ -1,0 +1,20 @@
+<div class="bg-dark container-menu-fix">
+    <ul>
+        <li class="my-3">
+            <a [routerLink]="['/admin']">
+                <button [ngClass]="{'active': showFiller}" matTooltipPosition="left" [matTooltipDisabled]="showFiller"
+                    matTooltip="Quản lý phim" mat-mini-fab>
+                    <mat-icon>list</mat-icon>
+                </button>
+            </a>
+        </li>
+        <li class="my-3">
+            <a [routerLink]="['/admin/users']">
+                <button [ngClass]="{'active': showFiller}" matTooltipPosition="left" [matTooltipDisabled]="showFiller"
+                    matTooltip="Quản lý người dùng" mat-mini-fab>
+                    <mat-icon>account_circle</mat-icon>
+                </button>
+            </a>
+        </li>
+    </ul>
+</div>

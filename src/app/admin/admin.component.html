@@ -1,0 +1,20 @@
+<div class="container-fluid h-100 p-0 m-0 container-box">
+    <div class="menu-content bg-dark">
+        <div class="menu-icon w-100 d-flex justify-content-end">
+            <button (click)="toggleShow()" mat-raised-button>
+                <mat-icon [ngClass]="{'active': showFiller}" class="icon-slide">keyboard_tab</mat-icon>
+            </button>
+        </div>
+        <div class="menu-slide">
+            <div class="menu-slide-content" [ngClass]="{'active': showFiller}">
+                <app-menu-slide ></app-menu-slide>
+            </div>
+            <div class="menu-fix-content" [ngClass]="{'active': showFiller}">
+                <app-menu-fix [showFiller]="showFiller"></app-menu-fix>
+            </div>
+        </div>
+    </div>
+    <div class="content w-100">
+        <router-outlet></router-outlet>        
+    </div>
+</div>

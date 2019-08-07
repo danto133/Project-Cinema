@@ -1,0 +1,12 @@
+.container-menu-fix{
+    width: 50px;
+    button {
+        transition: 500ms;
+        height: 36px;
+        &.active {
+            border-radius: 5px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
