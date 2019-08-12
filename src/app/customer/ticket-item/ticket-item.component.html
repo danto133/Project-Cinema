@@ -1,0 +1,6 @@
+<button 
+  class="btn seat" 
+  [ngClass]="{'daDat': seat.DaDat, 'dangChon': status}"
+  [disabled]="seat.DaDat" 
+  (click)="pickSeat()"
+>x</button>

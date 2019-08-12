@@ -1,1 +1,70 @@
-<p>ticket-room works!</p>
+
+<div class="ticket-room">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="screen mb-4 border-top pt-2">SCREEN</div>
+                <ng-container *ngFor="let item of getListSeat.DanhSachGhe; let stt = index" >
+                    <app-ticket-item [seat]="item" (eventClick)="pickSeat($event,stt)"></app-ticket-item>
+                    <br *ngIf="(stt + 1) % 10 === 0">
+                </ng-container>
+
+                <div class="list-ticket border d-flex justify-content-between p-4 mt-3">
+                    <p><span class="seat-1 p-2 mr-3 text-white">x</span>Ghế đang chọn</p>
+                    <p><span class="seat-2 p-2 mr-3 text-white">x</span>Ghế trống</p>
+                    <p><span class="seat-3 p-2 mr-3 text-white">x</span>Ghế đã bán</p>
+                </div>
+            </div>
+            <div class="col-sm-4 border">
+                <h3 class="text-center text-danger mb-4">COMBO</h3>
+                <div class="d-flex mb-3 ml-4">
+                    <img src="./assets/img/food/combo1.png" alt="">
+                    <div class="food-content ml-3">
+                        <h5>Combo 1</h5>
+                        <p>Price: 133.000 VNĐ</p>
+                        <button type="button" class="btn btn-outline-danger">-</button>
+                        0
+                        <button type="button" class="btn btn-outline-primary">+</button>
+                    </div>
+                </div>
+                <div class="d-flex mb-3 ml-4">
+                    <img src="./assets/img/food/combo2.png" alt="">
+                    <div class="food-content ml-3">
+                        <h5>Combo 2</h5>
+                        <p>Price: 133.000 VNĐ</p>
+                        <button type="button" class="btn btn-outline-danger">-</button>
+                        0
+                        <button type="button" class="btn btn-outline-primary">+</button>
+                    </div>
+                </div>
+                <div class="d-flex mb-3 ml-4">
+                    <img src="./assets/img/food/combo3.png" alt="">
+                    <div class="food-content ml-3">
+                        <h5>Combo 3</h5>
+                        <p>Price: 166.000 VNĐ</p>
+                        <button type="button" class="btn btn-outline-danger">-</button>
+                        0
+                        <button type="button" class="btn btn-outline-primary">+</button>
+                    </div>
+                </div>
+                <div class="d-flex mb-3 ml-4">
+                    <img src="./assets/img/food/combo4.png" alt="">
+                    <div class="food-content ml-3">
+                        <h5>Combo 4</h5>
+                        <p>Price: 166.000 VNĐ</p>
+                        <button type="button" class="btn btn-outline-danger">-</button>
+                        0
+                        <button type="button" class="btn btn-outline-primary">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="ticket-result text-center m-4">
+                <h3 class="text-danger">
+                    Tổng số tiền bạn phải thanh toán là 9999999 VNĐ
+                </h3>
+            </div>
+        </div>
+    </div> 
+</div>

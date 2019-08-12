@@ -1,7 +1,7 @@
 <div>
     <div class="box-img">
         <div class="over-flow" [routerLink]="[ '/detail', Film.MaPhim]" [queryParams]="{tenPhim: Film.TenPhim}"></div>
-        <img [src]="Film.HinhAnh ? Film.HinhAnh: assets/img/imageReplace.jpg " alt="">
+        <img [src]="Film.HinhAnh ? Film.HinhAnh : assets/img/imageReplace.jpg " alt="">
         <app-icon-play></app-icon-play>
     </div>
     <div class="box-select">

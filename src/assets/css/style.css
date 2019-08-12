@@ -1354,4 +1354,37 @@ hr {
     width: 100%;
 }
 
-  
+/* Ticket-room */
+.ticket-room {
+    padding: 280px 0 200px;
+}
+.seat {
+    background-color: gray;
+    margin: 10px;
+    color: white;
+    width: 50px;
+}
+.daDat {
+    background-color: rgb(207, 83, 104);
+    cursor: no-drop;
+}
+.dangChon {
+    background-color: rgb(104, 236, 104);
+}
+.screen {
+    border-top: white;
+    text-align: center;
+    font-size: 22px;
+}
+.seat-1 {
+    background-color: rgb(104, 236, 104);
+    border-radius: 5px;
+}
+.seat-2 {
+    background-color: gray;
+    border-radius: 5px;
+}
+.seat-3 {
+    background-color: rgb(207, 83, 104);
+    border-radius: 5px;
+}
